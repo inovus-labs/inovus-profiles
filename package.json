@@ -1,0 +1,27 @@
+{
+  "name": "inovus-profiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inovus-labs/inovus-profiles.git"
+  },
+  "author": "Arjun Krishna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inovus-labs/inovus-profiles/issues"
+  },
+  "homepage": "https://github.com/inovus-labs/inovus-profiles#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-subdomain": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
