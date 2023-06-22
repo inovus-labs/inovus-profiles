@@ -1,19 +1,24 @@
-const subdomain = require('express-subdomain');
-const express = require('express')
+var express = require('express');
+var hbs = require('express-handlebars');
 
-const app = express()
-const router = express.Router();
+var Router = require('./router');
+var app = express();
 
+app.set('views', (__dirname, 'views'));
+app.set('view engine', 'hbs');
 
-app.get('*', (req, res) => {
-    console.log(req.subdomains);
-});
+app.engine('hbs', hbs({
+    extname: 'hbs',
+    defaultLayout: 'index',
+    layoutsDir: __dirname + '/views/layout/'
+}));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'));
 
-router.use(subdomain('*.api', router));
-app.use(subdomain('api', router));
+app.use('/', Router);
 
-app.listen(3000, () => {
-    console.log('\x1b[35m%s\x1b[0m', '\n--- Server is running on port 3000! ---\n')
-    
+module.exports = app;
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on PORT ${process.env.PORT || 3000}`);
 })

@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/inovus-labs/inovus-profiles#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "express-subdomain": "^1.0.5"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.12"
   }
 }
